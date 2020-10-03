@@ -17,6 +17,11 @@
   --shadow-light: 0 2rem 5rem rgba($color: #000000, $alpha: 0.06);
 }
 
+$bp-largest: 75rem; // 1200px. 1rem=16px. default font size is 16px.
+$bp-large: 68.75rem; // 1100px
+$bp-medium: 56.25rem; // 900px
+$bp-small: 37.5rem; // 600px
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +36,11 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 100% = 16px we need 10px so 62.5%. Now 1 rem = 10px;
+
+  // decreasing global font-size for screen size<1100px. So that all elements will occupy space according to it as we have used rem
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; // // 100% = 16px we need 8px so 50%. Now 1 rem = 8px;
+  }
 }
 
 body {
